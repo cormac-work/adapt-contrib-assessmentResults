@@ -1,20 +1,21 @@
-{{! make the _globals object in course.json available to this template}}
+{{!-- Allows this template access to '_globals' object in course.json --}}
 {{import_globals}}
 
-<div class="results-inner component-inner">
+<div class="component__inner m-assessmentResults__inner">
+
   {{> component this}}
 
-  <div class="results-widget component-widget">
+  <div class="component__widget m-assessmentResults__widget">
 
     {{#if _isRetryEnabled}}
-    <div class="results-retry component-feedback">
+    <div class="component__feedback m-assessmentResults__retry">
 
-      <div class="results-retry-inner component-feedback-inner">
+      <div class="component__feedback-inner m-assessmentResults__retry-inner">
         {{{compile_a11y_text retryFeedback}}}
       </div>
 
-      <div class="results-retry-button">
-        <button>
+      <div class="m-assessmentResults__retry-btn-container">
+        <button class="btn-text m-results__retry-btn js-assessmentResults-retry-btn">
           {{#if _retry.button}}
           {{_retry.button}}
           {{else}}

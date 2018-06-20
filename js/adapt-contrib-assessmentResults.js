@@ -1,13 +1,13 @@
 define([
-    'core/js/adapt',
-    'core/js/views/componentView'
+  'core/js/adapt',
+  'core/js/views/componentView'
 ], function(Adapt, ComponentView) {
 
   var AssessmentResults = ComponentView.extend({
 
     events: {
       'inview': 'onInview',
-      'click .results-retry-button button': 'onRetry'
+      'click .js-assessmentResults-retry-btn': 'onRetry'
     },
 
     preRender: function () {
