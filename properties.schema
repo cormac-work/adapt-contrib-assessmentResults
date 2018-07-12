@@ -1,9 +1,9 @@
 {
-  "type":"object",
+  "type": "object",
   "$schema": "http://json-schema.org/draft-04/schema",
   "id": "http://jsonschema.net",
   "$ref": "http://localhost/plugins/content/component/model.schema",
-  "properties":{
+  "properties": {
     "_supportedLayout": {
       "type": "string",
       "required": true,
@@ -29,6 +29,19 @@
       "validators": [],
       "help": "Controls whether this component will be visible or hidden prior to the assessment having been completed."
     },
+    "_setCompletionOn": {
+      "type": "string",
+      "required": false,
+      "default": "inview",
+      "title": "Set completion on:",
+      "enum": ["inview", "pass"],
+      "inputType": {
+        "type": "Select",
+        "options": ["inview", "pass"]
+      },
+      "validators": [],
+      "help": "Set to 'pass' to have the component mark as completed only if the learner passed the associated assessment."
+    },
     "_assessmentId": {
       "type": "string",
       "required": true,
@@ -42,7 +55,7 @@
       "type": "object",
       "required": true,
       "title": "",
-      "properties":{
+      "properties": {
         "button": {
           "type": "string",
           "required": false,
@@ -76,13 +89,13 @@
       "translatable": true
     },
     "_bands": {
-      "type":"array",
-      "required":true,
+      "type": "array",
+      "required": true,
       "title": "Bands",
       "items": {
-        "type":"object",
-        "required":true,
-        "properties":{
+        "type": "object",
+        "required": true,
+        "properties": {
           "_score": {
             "type": "number",
             "required": false,
@@ -101,7 +114,7 @@
             "help": "This text will be displayed to the learner when the learner's score falls within this band's range."
           },
           "_allowRetry": {
-            "type":"boolean",
+            "type": "boolean",
             "required": true,
             "default": true,
             "title": "Allow Retry",
