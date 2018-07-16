@@ -7,7 +7,7 @@ define([
 
     events: {
       'inview': 'onInview',
-      'click .js-assessmentResults-retry-btn': 'onRetry'
+      'click .js-assessment-retry-btn': 'onRetry'
     },
 
     preRender: function () {

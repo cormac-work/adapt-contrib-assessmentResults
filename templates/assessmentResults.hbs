@@ -1,29 +1,29 @@
 {{!-- Allows this template access to '_globals' object in course.json --}}
 {{import_globals}}
 
-<div class="component__inner m-assessmentResults__inner">
+<div class="component__inner m-assessmentresults__inner">
 
   {{> component this}}
 
-  <div class="component__widget m-assessmentResults__widget">
+  <div class="component__widget m-assessmentresults__widget">
 
     {{#if _isRetryEnabled}}
-    <div class="component__feedback m-assessmentResults__retry">
+    <div class="component__feedback m-assessmentresults__feedback">
+      <div class="component__feedback-inner m-assessmentresults__feedback-inner">
 
-      <div class="component__feedback-inner m-assessmentResults__retry-inner">
-        {{{compile_a11y_text retryFeedback}}}
+        <div class="m-assessmentresults__retry-feedback">
+          <div class="m-assessmentresults__retry-feedback-inner">
+            {{{compile_a11y_text retryFeedback}}}
+          </div>
+        </div>
+
+        <div class="m-assessmentresults__retry-btn-container">
+          <button class="btn-text m-results__retry-btn js-assessment-retry-btn">
+            {{_retry.button}}
+          </button>
+        </div>
+
       </div>
-
-      <div class="m-assessmentResults__retry-btn-container">
-        <button class="btn-text m-results__retry-btn js-assessmentResults-retry-btn">
-          {{#if _retry.button}}
-          {{_retry.button}}
-          {{else}}
-          Retry
-          {{/if}}
-        </button>
-      </div>
-
     </div>
     {{/if}}
 
